@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="images/logo_devs.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Portfolio Website</title>
+    <title>Ronald Portfolio Website</title>
     <!-- Link To CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Box Icons -->
@@ -19,6 +20,7 @@
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -34,7 +36,7 @@
             <a href="#contact" class="btn">Hire Me</a>
         </div>
         <div class="home-img">
-            <img src="C:\Users\RonaldComp\Downloads\IMG-9284.jpg" alt="">
+            <img src="images/IMG-9284.jpg" alt="">
         </div>
     </section>
     <!-- About -->
@@ -43,17 +45,108 @@
             <h1><span>About</span> Me</h1>
             <h2>Introduction</h2>
             <div class="about-img">
-                <img src="C:\Users\RonaldComp\Downloads\IMG-9284.jpg" alt="">
+                <img src="images/IMG-9284.jpg" alt="">
             </div>
         </div>
         <div class="about-text">
             <p>Detail-oriented with over years 4 of experience in the IT Industry. Proficient with the latest cloud technologies, DevOps tools, computer software, hardware, and Internet of Things, seeking to bring fast and intelligent solutions to your organization. Committed, hard worker and self-motivated team player with strong analytical and strategic thinking skills. I always want to maintain a high level of professionalism while providing consistent and quality service. Fast learner and welcomes the challenge to learn and develop new skills.
             <div class="social">
-                <a href="#"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/rohnny80" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/rhonald-hajewole" target="_blank"><i class='bx bxl-linkedin'></i></a>
                 <a href="#"><i class='bx bxl-twitter'></i></a>
             </div>
-            </p>
+            </div>
+        </div>
+    </section>
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <div class="heading">
+            <h1><span>My</span> Skills</h1>
+        </div>
+        <div class="wrapper">
+            <h3>Skills</h3>
+            <div class="skills-wrapper">
+                <div class="bar">
+                    <div class="info">
+                        <span>Terraform</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="terraform"></span>
+                        <span data-width="90%">90%</span>
+                    </div>
+                </div>
+                
+                <div class="bar">
+                    <div class="info">
+                        <span>Jenkins</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="jenkins"></span>
+                        <span data-width="95%">95%</span>
+                    </div>
+                </div>
+    
+                <div class="bar">
+                    <div class="info">
+                        <span>Python</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="Python"></span>
+                        <span data-width="75%">75%</span>
+                    </div>
+                </div>
+    
+                <div class="bar">
+                    <div class="info">
+                        <span>Kubernetes/Docker</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="kubernetes/docker"></span>
+                        <span data-width="84%">84%</span>
+                    </div>
+                </div>
+    
+                <div class="bar">
+                    <div class="info">
+                        <span>CI/CD Pipeline</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="ci/cd pipeline"></span>
+                        <span data-width="92%">92%</span>
+                    </div>
+                </div>
+    
+                <div class="bar">
+                    <div class="info">
+                        <span>GitHub Actions</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="github actions"></span>
+                        <span data-width="94%">94%</span>
+                    </div>
+                </div>
+    
+                <div class="bar">
+                    <div class="info">
+                        <span>Linux</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="linux"></span>
+                        <span data-width="80%">80%</span>
+                    </div>
+                </div>
+    
+                <div class="bar">
+                    <div class="info">
+                        <span>AWS</span>
+                    </div>
+                    <div class="progress-bar">
+                        <span class="aws"></span>
+                             <span data-width="89%">89%</span>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </section>
     <!-- Services-->
@@ -167,13 +260,33 @@
             <h1><span>Contact</span> Me</h1>
         </div>
         <div class="contact-form">
-            <form action="">
+            <form onsubmit="sendEmail()">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" name="" id="" placeholder="Enter Your Email" required>
+                <input type="text" name="" id="" placeholder="Phone no." required>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here..." required></textarea>
                 <input type="submit" value="Send" class="send-btn">
             </form>
         </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                    Host : "pop.gmail.com",
+                    Username : "iamronnie77@gmail.com",
+                    Password : "0000000",
+                    To : 'ronald.ajewole@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Contact Form Enquiry",
+                    Body : "Name: " + document.getElementById("name").value
+                        + "<br> Email: " + document.getElementById("email").value
+                        + "<br> Phone no: " + document.getElementById("phone").value
+                        + "<br> Message: " + document.getElementById("message").value
+                }).then(
+                message => alert("Message Sent Successfully")
+                );
+            }
+        </script>
     </section>
     <!-- Copyright -->
     <div class="copyright">
